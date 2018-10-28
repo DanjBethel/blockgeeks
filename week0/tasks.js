@@ -27,7 +27,6 @@ console.log(repeatNumbers([[10, 4], [34, 6], [92, 2]]));
 // Task 2: Conditional Sums
 
 var conditionalSum = function(values, condition) {
-  var matchedValues = [];
   var total = 0;
 
   var even = function(number) {
@@ -41,18 +40,14 @@ var conditionalSum = function(values, condition) {
   for(var i = 0; i < values.length; i++) {
     if(condition == "even") {
       if(even(values[i])) {
-        matchedValues.push(values[i]);
+        total += values[i];
       }
     }
     if(condition == "odd") {
       if(odd(values[i])) {
-        matchedValues.push(values[i]);
+       total += values[i];
       }
     }
-  }
-
-  for(var x = 0; x < matchedValues.length; x++) {
-    total+= matchedValues[x];
   }
 
   return total;
